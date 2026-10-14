@@ -1,0 +1,15 @@
+{
+  "name": "skillbridge-ai",
+  "version": "1.0.0",
+  "description": "SkillBridge AI - a rule-based career and skill-gap analyzer (college Web Technologies project)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": ["express", "skill-gap", "career", "college-project"],
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
