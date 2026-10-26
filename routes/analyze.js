@@ -21,7 +21,10 @@ function validate(body) {
     errors.push("Please select your education level or degree.");
   }
 
-  if (!Object.prototype.hasOwnProperty.call(jobRoles, role)) {
+  if (
+    !role ||
+    !Object.prototype.hasOwnProperty.call(jobRoles, role)
+  ) {
     errors.push("Please select a valid target job role.");
   }
 
@@ -39,7 +42,9 @@ function validate(body) {
     }
 
     skills = [
-      ...new Set(data.skills.filter((skill) => allSkills.includes(skill))),
+      ...new Set(
+        data.skills.filter((skill) => allSkills.includes(skill))
+      ),
     ];
   }
 
@@ -116,7 +121,8 @@ function buildRoadmap(role, missing) {
       tasks: group.map(
         (skill) =>
           `${skill}: ${
-            skillTips[skill] || "Study the fundamentals and practise with examples."
+            skillTips[skill] ||
+            "Study the fundamentals and practise with examples."
           }`
       ),
     });
@@ -169,7 +175,10 @@ function buildNextSteps(role, gap) {
     );
   }
 
-  steps.push(`Build ${jobRoles[role].project} to demonstrate your skills.`);
+  steps.push(
+    `Build ${jobRoles[role].project} to demonstrate your skills.`
+  );
+
   steps.push(
     "Keep your code on GitHub and update your resume as you learn."
   );
