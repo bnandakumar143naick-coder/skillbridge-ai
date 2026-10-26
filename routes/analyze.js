@@ -6,8 +6,7 @@ const express = require("express");
 const { allSkills, jobRoles, skillTips } = require("../data/jobRoles");
 
 const router = express.Router();
-
-/* ---------- 1. Validation ---------- */
+878
 function validate(body) {
   const errors = [];
   const data = body || {};
@@ -39,9 +38,6 @@ function validate(body) {
 
   return { errors, clean: { name, education, role, skills } };
 }
-
-/* ---------- 2. Skill-gap calculation ---------- */
-// Skill Match % = (matching required skills / total required skills) x 100
 function calculateGap(role, studentSkills) {
   const required = jobRoles[role].requiredSkills;
   const matched = required.filter((s) => studentSkills.includes(s));
@@ -51,7 +47,7 @@ function calculateGap(role, studentSkills) {
   return { required, matched, missing, extra, percentage };
 }
 
-/* ---------- 3. Readiness level ---------- */
+
 function getLevel(percentage) {
   if (percentage === 100) return "Job-ready";
   if (percentage >= 70) return "Almost there";
@@ -59,7 +55,7 @@ function getLevel(percentage) {
   return "Just getting started";
 }
 
-/* ---------- 4. Roadmap builder ---------- */
+
 function buildRoadmap(role, missing) {
   const project = jobRoles[role].project;
   const weeks = [];
@@ -81,7 +77,7 @@ function buildRoadmap(role, missing) {
     return weeks;
   }
 
-  // Spread missing skills across at most 3 learning weeks.
+  
   const perWeek = Math.max(2, Math.ceil(missing.length / 3));
   for (let i = 0; i < missing.length; i += perWeek) {
     const group = missing.slice(i, i + perWeek);
@@ -113,7 +109,7 @@ function buildRoadmap(role, missing) {
   return weeks;
 }
 
-/* ---------- 5. Recommended next steps ---------- */
+
 function buildNextSteps(role, gap) {
   const steps = [];
   if (gap.missing.length > 0) {
