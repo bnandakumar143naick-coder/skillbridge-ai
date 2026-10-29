@@ -1,120 +1,267 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SkillBridge AI</title>
-  <meta name="description" content="SkillBridge AI compares your skills with a target job role and builds a learning roadmap.">
+
+  <title>SkillPath AI | Career Skill Analyzer</title>
+  <meta name="description" content="Analyze your current skills, discover career gaps, and create a personalized learning roadmap with SkillPath AI.">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-  
+  <!-- Navigation -->
   <header class="navbar">
     <div class="container nav-inner">
-      <a href="#" class="brand" data-view="home" aria-label="SkillBridge AI home">
-        <svg class="brand-icon" viewBox="0 0 32 32" aria-hidden="true">
+
+      <a href="#" class="brand" data-view="home"
+         aria-label="SkillPath AI home">
+
+        <svg class="brand-icon" viewBox="0 0 32 32"
+             aria-hidden="true">
           <defs>
-            <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#2f6bff"/><stop offset="1" stop-color="#7c3aed"/>
+            <linearGradient id="brandGradient"
+                            x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#06b6d4"/>
+              <stop offset="1" stop-color="#7c3aed"/>
             </linearGradient>
           </defs>
-          <rect width="32" height="32" rx="9" fill="url(#bg1)"/>
-          <path d="M5 21 Q16 7 27 21" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
-          <path d="M4 22h24" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+
+          <rect width="32" height="32" rx="9"
+                fill="url(#brandGradient)"/>
+
+          <path d="M6 20 L13 13 L18 18 L27 8"
+                fill="none" stroke="#fff"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"/>
+
+          <path d="M21 8 H27 V14"
+                fill="none" stroke="#fff"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"/>
         </svg>
-        SkillBridge AI
+
+        SkillPath AI
       </a>
-      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
+
+      <button class="nav-toggle" id="navToggle"
+              aria-label="Open navigation menu"
+              aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
+
       <nav class="nav-links" id="navLinks">
-        <a href="#" data-view="home" class="nav-link active">Home</a>
-        <a href="#" data-view="assess" class="nav-link">Skill Assessment</a>
-        <a href="#" data-view="results" class="nav-link" id="navResults" hidden>My Results</a>
+        <a href="#" data-view="home"
+           class="nav-link active">Home</a>
+
+        <a href="#" data-view="assess"
+           class="nav-link">Skill Analyzer</a>
+
+        <a href="#" data-view="results"
+           class="nav-link" id="navResults" hidden>
+          My Dashboard
+        </a>
       </nav>
+
     </div>
   </header>
 
   <main>
 
-    <!-- ===== A. Home page (Student 1) ===== -->
+    <!-- Home Page -->
     <section id="view-home" class="view active">
+
       <div class="hero">
         <div class="container hero-grid">
+
           <div>
-            <h1>SkillBridge AI</h1>
-            <p class="tagline">Discover Your Skills. Bridge Your Gaps. Build Your Future.</p>
-            <p class="intro">
-              Pick the skills you already have, choose the job you want, and see exactly
-              what stands between you and it. SkillBridge AI compares your skills with the
-              requirements of the role and gives you a week-by-week plan to close the gap.
+            <p class="eyebrow">YOUR CAREER, YOUR NEXT STEP</p>
+
+            <h1>SkillPath AI</h1>
+
+            <p class="tagline">
+              Learn Smarter. Grow Faster. Reach Your Career Goals.
             </p>
-            <button class="btn btn-light" data-view="assess">Start Skill Analysis</button>
-            <p class="hero-note">Rule-based analysis using predefined job-role data. No resume upload, no trained AI model.</p>
+
+            <p class="intro">
+              Ready to take the next step in your career?
+              Select the skills you already know and choose
+              your dream job role. SkillPath AI will compare
+              your skills with the role requirements, identify
+              your learning gaps, and recommend a structured
+              roadmap to help you move forward.
+            </p>
+
+            <button class="btn btn-light" data-view="assess">
+              Explore My Career Path
+            </button>
+
+            <p class="hero-note">
+              Uses predefined job-skill requirements and
+              rule-based analysis. No resume upload required.
+            </p>
           </div>
 
-          <!-- Illustration: skills -> gap -> role -->
+          <!-- Career Progress Illustration -->
           <div class="bridge-card" aria-hidden="true">
             <svg viewBox="0 0 360 200" role="img">
-              <rect x="0" y="120" width="90" height="80" rx="14" fill="#ffffff" opacity=".95"/>
-              <rect x="270" y="120" width="90" height="80" rx="14" fill="#ffffff" opacity=".95"/>
-              <path d="M90 130 Q180 20 270 130" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 14"/>
-              <path d="M90 128 L270 128" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
-              <line x1="135" y1="128" x2="135" y2="86" stroke="#fff" stroke-width="3"/>
-              <line x1="180" y1="128" x2="180" y2="72" stroke="#fff" stroke-width="3"/>
-              <line x1="225" y1="128" x2="225" y2="86" stroke="#fff" stroke-width="3"/>
-              <text x="45" y="168" text-anchor="middle" font-size="14" font-weight="700" fill="#4338ca">Your skills</text>
-              <text x="315" y="168" text-anchor="middle" font-size="14" font-weight="700" fill="#4338ca">Your role</text>
+
+              <defs>
+                <linearGradient id="careerGradient"
+                                x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#22d3ee"/>
+                  <stop offset="1" stop-color="#8b5cf6"/>
+                </linearGradient>
+              </defs>
+
+              <rect x="0" y="120" width="90" height="80"
+                    rx="14" fill="#ffffff" opacity=".96"/>
+
+              <rect x="270" y="120" width="90" height="80"
+                    rx="14" fill="#ffffff" opacity=".96"/>
+
+              <path d="M90 130 Q180 20 270 130"
+                    fill="none" stroke="url(#careerGradient)"
+                    stroke-width="7" stroke-linecap="round"/>
+
+              <path d="M90 130 L270 130"
+                    stroke="#fff" stroke-width="5"
+                    stroke-linecap="round"/>
+
+              <line x1="135" y1="130" x2="135" y2="88"
+                    stroke="#fff" stroke-width="3"/>
+
+              <line x1="180" y1="130" x2="180" y2="72"
+                    stroke="#fff" stroke-width="3"/>
+
+              <line x1="225" y1="130" x2="225" y2="88"
+                    stroke="#fff" stroke-width="3"/>
+
+              <circle cx="180" cy="54" r="12"
+                      fill="#fff" opacity=".95"/>
+
+              <path d="M174 54 L178 58 L186 49"
+                    fill="none" stroke="#4f46e5"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"/>
+
+              <text x="45" y="160" text-anchor="middle"
+                    font-size="12" font-weight="700"
+                    fill="#4338ca">YOUR SKILLS</text>
+
+              <text x="315" y="160" text-anchor="middle"
+                    font-size="12" font-weight="700"
+                    fill="#4338ca">YOUR GOAL</text>
+
+              <text x="180" y="185" text-anchor="middle"
+                    font-size="11" font-weight="600"
+                    fill="#4338ca">BUILD YOUR FUTURE</text>
+
             </svg>
           </div>
+
         </div>
       </div>
 
+      <!-- Features -->
       <div class="container section">
-        <h2 class="section-title">What you can do here</h2>
+
+        <h2 class="section-title">
+          Your Career Growth Toolkit
+        </h2>
+
         <div class="card-grid three">
+
           <article class="card feature">
-            <div class="icon blue">✔</div>
-            <h3>Skill Assessment</h3>
-            <p>Tell us your degree, tick the skills you have and choose the role you are aiming for.</p>
+            <div class="icon blue">✓</div>
+
+            <h3>Discover Your Skills</h3>
+
+            <p>
+              Add your educational background and select the
+              technical and professional skills you already have.
+            </p>
           </article>
+
           <article class="card feature">
-            <div class="icon purple">⇄</div>
-            <h3>Skill Gap Analysis</h3>
-            <p>See which required skills you already have, which are missing, and your match percentage.</p>
+            <div class="icon purple">↗</div>
+
+            <h3>Identify Skill Gaps</h3>
+
+            <p>
+              Compare your current abilities with the skills
+              expected for your selected career and see your
+              estimated match percentage.
+            </p>
           </article>
+
           <article class="card feature">
             <div class="icon indigo">➜</div>
-            <h3>Personalised Learning Roadmap</h3>
-            <p>Get a week-by-week plan built from your missing skills and your chosen role.</p>
+
+            <h3>Plan Your Learning</h3>
+
+            <p>
+              Follow a week-by-week learning roadmap designed
+              around the skills you still need to develop.
+            </p>
           </article>
+
         </div>
       </div>
     </section>
 
-    <!-- ===== B. Student skill assessment (Student 2) ===== -->
+    <!-- Skill Assessment -->
     <section id="view-assess" class="view">
+
       <div class="container section narrow">
-        <h2 class="section-title left">Skill assessment</h2>
-        <p class="lead">Fill in your details, select every skill you currently have, and pick your target role.</p>
 
-        <div id="formAlert" class="alert alert-error" role="alert" hidden></div>
+        <h2 class="section-title left">
+          Build Your Career Profile
+        </h2>
 
-        <form id="assessForm" class="card form-card" novalidate>
+        <p class="lead">
+          Tell us about your education, select your existing
+          skills, and choose the career you want to pursue.
+        </p>
+
+        <div id="formAlert"
+             class="alert alert-error"
+             role="alert" hidden></div>
+
+        <form id="assessForm"
+              class="card form-card" novalidate>
+
+          <!-- Student Name -->
           <div class="field">
-            <label for="name">Student name</label>
-            <input type="text" id="name" name="name" placeholder="e.g. Ananya Reddy" maxlength="60" autocomplete="name">
+            <label for="name">Full Name</label>
+
+            <input type="text" id="name" name="name"
+                   placeholder="Enter your full name"
+                   maxlength="60" autocomplete="name">
+
             <p class="field-error" id="nameError"></p>
           </div>
 
+          <!-- Education -->
           <div class="field">
-            <label for="education">Education level or degree</label>
+            <label for="education">
+              Educational Qualification
+            </label>
+
             <select id="education" name="education">
-              <option value="">Select your degree</option>
+              <option value="">Choose your qualification</option>
               <option>Diploma</option>
               <option>B.Tech / B.E.</option>
               <option>BCA</option>
@@ -124,114 +271,258 @@
               <option>M.Sc (Computer Science / IT)</option>
               <option>Other</option>
             </select>
+
             <p class="field-error" id="educationError"></p>
           </div>
 
+          <!-- Current Skills -->
           <fieldset class="field">
-            <legend>Current skills <span class="muted">(select all that apply)</span></legend>
+
+            <legend>
+              Your Current Skills
+              <span class="muted">(select all that apply)</span>
+            </legend>
+
             <div class="skill-grid" id="skillGrid">
-              <label class="skill-option"><input type="checkbox" name="skills" value="Python"><span>Python</span></label>
-              <label class="skill-option"><input type="checkbox" name="skills" value="Java"><span>Java</span></label>
-              <label class="skill-option"><input type="checkbox" name="skills" value="C++"><span>C++</span></label>
-              <label class="skill-option"><input type="checkbox" name="skills" value="HTML"><span>HTML</span></label>
-              <label class="skill-option"><input type="checkbox" name="skills" value="CSS"><span>CSS</span></label>
-              <label class="skill-option"><input type="checkbox" name="skills" value="JavaScript"><span>JavaScript</span></label>
-              <label class="skill-option"><input type="checkbox" name="skills" value="SQL"><span>SQL</span></label>
-              <label class="skill-option"><input type="checkbox" name="skills" value="Git"><span>Git</span></label>
-              <label class="skill-option"><input type="checkbox" name="skills" value="GitHub"><span>GitHub</span></label>
-              <label class="skill-option"><input type="checkbox" name="skills" value="Data Structures"><span>Data Structures</span></label>
-              <label class="skill-option"><input type="checkbox" name="skills" value="Machine Learning"><span>Machine Learning</span></label>
-              <label class="skill-option"><input type="checkbox" name="skills" value="Pandas"><span>Pandas</span></label>
-              <label class="skill-option"><input type="checkbox" name="skills" value="NumPy"><span>NumPy</span></label>
-              <label class="skill-option"><input type="checkbox" name="skills" value="Communication"><span>Communication</span></label>
+
+              <label class="skill-option">
+                <input type="checkbox" name="skills" value="Python">
+                <span>Python</span>
+              </label>
+
+              <label class="skill-option">
+                <input type="checkbox" name="skills" value="Java">
+                <span>Java</span>
+              </label>
+
+              <label class="skill-option">
+                <input type="checkbox" name="skills" value="C++">
+                <span>C++</span>
+              </label>
+
+              <label class="skill-option">
+                <input type="checkbox" name="skills" value="HTML">
+                <span>HTML</span>
+              </label>
+
+              <label class="skill-option">
+                <input type="checkbox" name="skills" value="CSS">
+                <span>CSS</span>
+              </label>
+
+              <label class="skill-option">
+                <input type="checkbox" name="skills" value="JavaScript">
+                <span>JavaScript</span>
+              </label>
+
+              <label class="skill-option">
+                <input type="checkbox" name="skills" value="SQL">
+                <span>SQL</span>
+              </label>
+
+              <label class="skill-option">
+                <input type="checkbox" name="skills" value="Git">
+                <span>Git</span>
+              </label>
+
+              <label class="skill-option">
+                <input type="checkbox" name="skills" value="GitHub">
+                <span>GitHub</span>
+              </label>
+
+              <label class="skill-option">
+                <input type="checkbox" name="skills" value="Data Structures">
+                <span>Data Structures</span>
+              </label>
+
+              <label class="skill-option">
+                <input type="checkbox" name="skills" value="Machine Learning">
+                <span>Machine Learning</span>
+              </label>
+
+              <label class="skill-option">
+                <input type="checkbox" name="skills" value="Pandas">
+                <span>Pandas</span>
+              </label>
+
+              <label class="skill-option">
+                <input type="checkbox" name="skills" value="NumPy">
+                <span>NumPy</span>
+              </label>
+
+              <label class="skill-option">
+                <input type="checkbox" name="skills" value="Communication">
+                <span>Communication</span>
+              </label>
+
             </div>
+
             <p class="field-error" id="skillsError"></p>
           </fieldset>
 
+          <!-- Target Role -->
           <div class="field">
-            <label for="role">Target job role</label>
+
+            <label for="role">Choose Your Target Career</label>
+
             <select id="role" name="role">
-              <option value="">Select a job role</option>
+              <option value="">Select your desired job role</option>
               <option>Frontend Developer</option>
               <option>Backend Developer</option>
               <option>Python Developer</option>
               <option>AI/ML Engineer</option>
               <option>Data Analyst</option>
             </select>
+
             <p class="field-error" id="roleError"></p>
           </div>
 
+          <!-- Actions -->
           <div class="form-actions">
-            <button type="submit" class="btn btn-primary" id="submitBtn">Analyse My Skills</button>
-            <button type="reset" class="btn btn-ghost" id="resetBtn">Clear form</button>
+
+            <button type="submit"
+                    class="btn btn-primary"
+                    id="submitBtn">
+              Generate My Career Analysis
+            </button>
+
+            <button type="reset"
+                    class="btn btn-ghost"
+                    id="resetBtn">
+              Reset Form
+            </button>
+
           </div>
         </form>
       </div>
     </section>
 
-    
+    <!-- Results Dashboard -->
     <section id="view-results" class="view">
+
       <div class="container section">
-        <div id="successAlert" class="alert alert-success" role="status" hidden></div>
+
+        <div id="successAlert"
+             class="alert alert-success"
+             role="status" hidden></div>
 
         <div class="results-head">
+
           <div>
-            <h2 class="section-title left" id="resultTitle">Your results</h2>
+            <h2 class="section-title left" id="resultTitle">
+              Your Career Analysis
+            </h2>
+
             <p class="lead" id="resultSubtitle"></p>
           </div>
-          <button class="btn btn-primary" id="analyseAgainBtn">Analyse Again</button>
+
+          <button class="btn btn-primary"
+                  id="analyseAgainBtn">
+            Update My Analysis
+          </button>
+
         </div>
 
         <div class="dash-grid">
-          <!-- Match percentage -->
+
+          <!-- Career Match -->
           <article class="card match-card">
-            <h3>Match percentage</h3>
-            <p class="match-number"><span id="matchPercent">0</span>%</p>
-            <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressTrack">
-              <div class="progress-fill" id="progressFill"></div>
+
+            <h3>Career Match Score</h3>
+
+            <p class="match-number">
+              <span id="matchPercent">0</span>%
+            </p>
+
+            <div class="progress"
+                 role="progressbar"
+                 aria-label="Career skill match"
+                 aria-valuemin="0"
+                 aria-valuemax="100"
+                 aria-valuenow="0"
+                 id="progressTrack">
+
+              <div class="progress-fill"
+                   id="progressFill"></div>
             </div>
+
             <p class="match-level" id="matchLevel"></p>
+
             <p class="muted small" id="matchFormula"></p>
+
           </article>
 
-          <!-- Skills identified -->
+          <!-- Existing Skills -->
           <article class="card">
-            <h3>Skills identified</h3>
-            <p class="muted small">Required skills you already have</p>
+
+            <h3>Skills You Already Have</h3>
+
+            <p class="muted small">
+              Required skills that match your profile
+            </p>
+
             <ul class="chips" id="matchedList"></ul>
-            <p class="muted small extra-title">Other skills you listed</p>
+
+            <p class="muted small extra-title">
+              Additional skills in your profile
+            </p>
+
             <ul class="chips chips-neutral" id="extraList"></ul>
+
           </article>
 
-          <!-- Skills to learn -->
+          <!-- Missing Skills -->
           <article class="card">
-            <h3>Skills to learn</h3>
-            <p class="muted small">Required skills still missing</p>
+
+            <h3>Skills to Develop</h3>
+
+            <p class="muted small">
+              Skills to focus on for your target career
+            </p>
+
             <ul class="chips chips-gap" id="missingList"></ul>
+
           </article>
 
-          <!-- Next steps -->
+          <!-- Recommendations -->
           <article class="card">
-            <h3>Recommended next steps</h3>
+
+            <h3>Your Recommended Next Steps</h3>
+
             <ul class="steps" id="nextSteps"></ul>
+
           </article>
+
         </div>
 
-        <h2 class="section-title left roadmap-title">Your learning roadmap</h2>
+        <!-- Learning Roadmap -->
+        <h2 class="section-title left roadmap-title">
+          Your Personalized Learning Roadmap
+        </h2>
+
         <div class="timeline" id="roadmap"></div>
 
         <p class="muted small method-note" id="methodNote"></p>
+
       </div>
     </section>
 
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p>SkillBridge AI · College Web Technologies Project · Rule-based skill-gap analysis</p>
+      <p>
+        SkillPath AI · Career Readiness & Skill Analysis Project
+      </p>
+      <p>
+        Learn continuously. Build projects. Grow your career.
+      </p>
     </div>
   </footer>
 
+  <!-- Existing application logic -->
   <script src="js/app.js"></script>
+
 </body>
 </html>
