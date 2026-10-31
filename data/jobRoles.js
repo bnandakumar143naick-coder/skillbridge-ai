@@ -1,3 +1,4 @@
+
 // data/jobRoles.js
 // All "knowledge" of the app lives here: the skill list, the required skills
 // for each job role, and short learning tips. Nothing is random or AI-generated.
@@ -35,6 +36,22 @@ const jobRoles = {
     description: "Cleans, analyses and explains data to support decisions.",
     requiredSkills: ["Python", "SQL", "Pandas", "NumPy", "Communication"],
     project: "a data analysis report with charts on a public dataset"
+  },
+
+  // New contribution: Full Stack Developer
+  "Full Stack Developer": {
+    description: "Builds both frontend and backend parts of web applications.",
+    requiredSkills: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Python",
+      "SQL",
+      "Git",
+      "GitHub",
+      "Communication"
+    ],
+    project: "a full-stack task management application with frontend, backend and database"
   }
 };
 
